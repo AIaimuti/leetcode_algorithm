@@ -152,5 +152,38 @@ public:
             }
         }
     }
+    // 冒泡排序 
+    void bubbleSort(vector<int>& nums) {
+        for (int i = 0; i < nums.size(); ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (nums[i] < nums[j]) {
+                    swap(nums[i], nums[j]);
+                }
+            }
+        }
+    }
+    //插入排序
+    void insertSort(vector<int>& nums) {
+        for (int i = 0; i < nums.size(); ++i) {
+            for (int j = i; j - 1 >= 0 && nums[j - 1] > nums[j]; --j) {
+                swap(nums[j - 1], nums[j]);
+            }
+        }
+    }
+    
+    // 选择排序 超时
+    void selectSort(vector<int>& nums) {
+        for (int i = 0; i < nums.size(); ++i) {
+            int min_ind = i;
+            for (int j = i; j < nums.size(); ++j) {
+                if (nums[j] < nums[min_ind]) {
+                    min_ind = j;
+                }
+            }
+            swap(nums[i], nums[min_ind]);
+        }
+    }
+
 
 };
+
